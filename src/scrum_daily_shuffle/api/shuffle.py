@@ -5,10 +5,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
 
-from src.api.daddy_joke import get_newest_daddy_joke, get_random_daddy_joke
-from src.config import CONFIG, ShuffleSitesConfig
-from src.db import get_db_session
-from src.utils import (
+from scrum_daily_shuffle.api.daddy_joke import get_newest_daddy_joke, get_random_daddy_joke
+from scrum_daily_shuffle.config import CONFIG, ShuffleSitesConfig
+from scrum_daily_shuffle.db import get_db_session
+from scrum_daily_shuffle.utils import (
     DAILY_SHUFFLE_DADDY_JOKE_SITE_PART,
     DAILY_SHUFFLE_PATH_BASE,
     SHUFFLE_SITE,

@@ -7,9 +7,9 @@ from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
 
-from src.db import get_db_session
-from src.model import DaddyJoke, Joke, Meme, SpoilerJoke
-from src.schemas import (
+from scrum_daily_shuffle.db import get_db_session
+from scrum_daily_shuffle.model import DaddyJoke, Joke, Meme, SpoilerJoke
+from scrum_daily_shuffle.schemas import (
     CreateJokeSchema,
     CreateMemeSchema,
     CreateSpoilerJokeSchema,
@@ -17,7 +17,7 @@ from src.schemas import (
     MemeSchema,
     SpoilerJokeSchema,
 )
-from src.utils import DADDY_JOKE_SITE, DADDY_JOKES_PATH
+from scrum_daily_shuffle.utils import DADDY_JOKE_SITE, DADDY_JOKES_PATH
 
 daddy_joke_router: APIRouter = APIRouter(prefix=f"/{DADDY_JOKES_PATH}")
 
@@ -216,7 +216,7 @@ def delete_meme(id: int, db_session: Session = Depends(get_db_session)) -> Respo
     Delete meme by ``id``.
     """
 
-    meme = db_session.query(Joke).filter(Joke.id == id).first()
+    meme = db_session.query(Meme).filter(Meme.id == id).first()
 
     if not meme:
         raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Meme not found.")

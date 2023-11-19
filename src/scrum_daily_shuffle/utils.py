@@ -1,4 +1,4 @@
-from src.config import Config
+from scrum_daily_shuffle.config import Config
 
 DAILY_SHUFFLE_PATH_BASE: str = "daily_shuffle"
 

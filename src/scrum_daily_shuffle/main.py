@@ -2,10 +2,10 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from src.api.daddy_joke import daddy_joke_router
-from src.api.shuffle import shuffle_router
-from src.config import CONFIG
-from src.utils import get_home_site
+from scrum_daily_shuffle.api.daddy_joke import daddy_joke_router
+from scrum_daily_shuffle.api.shuffle import shuffle_router
+from scrum_daily_shuffle.config import CONFIG
+from scrum_daily_shuffle.utils import get_home_site
 
 APP: FastAPI = FastAPI(title="Daily random people order", version="0.1.0")
 

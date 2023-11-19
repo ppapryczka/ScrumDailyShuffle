@@ -13,7 +13,6 @@ class ShuffleSitesConfig(BaseModel):
 
 
 class Config(BaseSettings):
-    href_base: str
     shuffle_sites_configs: List[ShuffleSitesConfig]
     sqlite3_filepath: str
 

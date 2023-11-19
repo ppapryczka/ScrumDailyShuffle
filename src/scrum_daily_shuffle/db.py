@@ -3,7 +3,7 @@ from typing import Generator
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from src.config import CONFIG
+from scrum_daily_shuffle.config import CONFIG
 
 ENGINE = create_engine(f"sqlite:///{CONFIG.sqlite3_filepath}")
 """
