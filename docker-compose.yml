@@ -1,0 +1,12 @@
+version: '2.0'
+
+services:
+  shuffle:
+    image: 'scrum-daily-shuffle:local'
+    environment:
+        - "PYTHONPATH=/scrum_daily_shuffle"
+    ports:
+      - 15015:15015
+    volumes:
+        - ./jokes.db:/scrum_daily_shuffle/jokes.db
+        - ./.env:/scrum_daily_shuffle/.env
